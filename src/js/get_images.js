@@ -29,7 +29,7 @@ export function getImages(name, page = 1) {
       const data = response.data;
 
       // додавання повідомлення про кількість знайдених зображень
-      if (page === 1) {
+      if (page === 1 && data.totalHits !== 0) {
         Notiflix.Notify.info(`Hooray! We found ${data.totalHits} images.`);
       }
 
@@ -53,6 +53,7 @@ export function getImages(name, page = 1) {
 
       // перевірка за пошуком, який відсутній на сервері
       if (!data.hits.length) {
+        refs.loadmore.hidden = true;
         Notiflix.Notify.failure(
           'Sorry, there are no images matching your search query. Please try again.'
         );
