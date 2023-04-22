@@ -22,7 +22,7 @@ async function onSearch(event) {
   }
   try {
     const cardImage = await getImages(refs.search.elements.searchQuery.value);
-    // gallery.refresh();
+    gallery.refresh();
     return cardImage;
   } catch (error) {
     console.log(error);
@@ -36,7 +36,7 @@ async function onLoad() {
       refs.search.elements.searchQuery.value,
       currentPage
     );
-    // gallery.refresh();
+    gallery.refresh();
     return addImages;
   } catch (error) {
     console.log(error);
