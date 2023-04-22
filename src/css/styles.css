@@ -13,13 +13,24 @@ body {
 }
 
 header {
+  backdrop-filter: blur(0.8px);
+  background: linear-gradient(
+    180deg,
+    #000000 10%,
+    rgba(0, 0, 0, 0.747) 70.3%,
+    rgba(0, 0, 0, 0) 100%
+  );
   position: fixed;
   display: flex;
-  /* width: 100vw; */
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 40px;
-  outline: 1px solid red;
-  background-color: aqua;
   z-index: 100;
+}
+
+.opac {
+  opacity: 0.5;
 }
 
 .search-form {
